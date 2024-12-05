@@ -6,6 +6,7 @@ export const AppProvider = ({ children }) => {
   const [items, setItems] = useState([]);
   const [products, setProducts] = useState([
     {
+      quantity: 1,
       id: 1,
       name: "Demon Slayer  Sticker",
       price: 4,
@@ -20,7 +21,7 @@ export const AppProvider = ({ children }) => {
       description:
         "Show your allegiance to the Uchiha clan with this high-quality sticker. Perfect for laptops, water bottles, and more. Durable and long-lasting design.",
     },
-    {
+    { quantity: 1,
       id: 2,
       name: "Call Me Gojo Sensei Sticker",
       price: 5,
@@ -35,7 +36,7 @@ export const AppProvider = ({ children }) => {
       description:
         "Embrace your inner sorcerer with this Gojo Sensei sticker. A must-have for fans of Jujutsu Kaisen. Stick it anywhere for instant style.",
     },
-    {
+    { quantity: 1,
       id: 3,
       name: "Hokage for President Sticker",
       price: 6,
@@ -50,7 +51,7 @@ export const AppProvider = ({ children }) => {
       description:
         "Declare your support for the strongest ninja with this Hokage for President sticker. Ideal for any Naruto fan. Add it to your collection today!",
     },
-    {
+    { quantity: 1,
       id: 4,
       name: "Zoro Sticker",
       price: 4,
@@ -65,7 +66,7 @@ export const AppProvider = ({ children }) => {
       description:
         "Show your admiration for the sword master Zoro with this epic sticker. A perfect fit for any One Piece enthusiast. Stick it on and stay inspired.",
     },
-    {
+    { quantity: 1,
       id: 5,
       name: "Nezuko Chan sticker",
       price: 5,
@@ -80,7 +81,7 @@ export const AppProvider = ({ children }) => {
       description:
         "Carry Nezuko's charm with you everywhere with this cute sticker. Perfect for fans of Demon Slayer. Add a touch of sweetness to your collection.",
     },
-    {
+    { quantity: 1,
       id: 6,
       image:
         "https://www.stickitup.xyz/cdn/shop/products/1_f553b060-c121-4cd8-9021-f451a552c548.jpg?v=1684984672&width=493",
@@ -95,7 +96,7 @@ export const AppProvider = ({ children }) => {
       description:
         "Enjoy your favorite drink with this inspiring sticker. Perfect for any coffee or tea lover. Bring a touch of positivity to your day.",
     },
-    {
+    { quantity: 1,
       id: 7,
       image:
         "https://www.stickitup.xyz/cdn/shop/products/1pt3P1rn98-hiuzFB6OCzl_Y6exmuFEms.jpg?v=1654188642&width=493",
@@ -110,7 +111,7 @@ export const AppProvider = ({ children }) => {
       description:
         "Show your love for Shoto Todoroki with this dynamic sticker. Great for any My Hero Academia fan. Add a cool touch to your collection.",
     },
-    {
+    { quantity: 1,
       id: 8,
       name: "Shin-chan Nohara Sticker",
       price: 4,
@@ -125,7 +126,7 @@ export const AppProvider = ({ children }) => {
       description:
         "Add a playful vibe to your collection with this Shin-chan sticker. Perfect for fans of the cheeky cartoon character. Brighten up any surface with his antics.",
     },
-    {
+    { quantity: 1,
       id: 9,
       image:
         "https://www.stickitup.xyz/cdn/shop/files/2_1746fe98-87ac-435c-a448-b3c92ba6ff22.jpg?v=1687345766&width=493",
@@ -140,7 +141,7 @@ export const AppProvider = ({ children }) => {
       description:
         "Embrace the dark and mysterious side with this Itachi Uchiha sticker. A must-have for Naruto fans. Showcase your loyalty to the Uchiha clan.",
     },
-    {
+    { quantity: 1,
       id: 10,
       name: "Yuji Sticker",
       price: 4,
@@ -157,7 +158,7 @@ export const AppProvider = ({ children }) => {
         "Capture the spirit of adventure with this Yuji sticker. Perfect for fans of Jujutsu Kaisen. Let your personality shine with this vibrant design.",
     },{ id: 11,
       name: "Uchiha Logo Sticker",
-      price: 4,
+      price: 4, quantity: 1,
       image:
         "https://www.stickitup.xyz/cdn/shop/products/1_d0752361-a796-4d9e-803e-5d60f16bf529.jpg?v=1684984852&width=493",
       img1: "https://www.stickitup.xyz/cdn/shop/products/2_9992b431-0376-4333-996f-459c1fc8bc3c.jpg?v=1684984854&width=493",

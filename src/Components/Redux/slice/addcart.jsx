@@ -9,7 +9,7 @@ export const addcart = createSlice({
     add(state, action) {
       const alreadyExist = state.find((item) => item.id === action.payload.id);
       if (alreadyExist) {
-        action.payload.quantity +=1
+        alreadyExist.quantity + item.quantity;
        
       } else {
         state.push(action.payload);
