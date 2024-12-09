@@ -26,7 +26,7 @@ function ProductDetail() {
     <>
       <div className="flex justify-center flex-wrap gap-10 pt-16 pb-20  bg-primary-quaternary">
         <div>
-          <Images />
+          <Images/>
         </div>
         <div>
           <Link>
@@ -43,14 +43,14 @@ function ProductDetail() {
           <p className="text-5xl text-primary mb-3"> $ {updatedValue} </p>
           <p className="text-red-900 line-through">$ 15</p>
           <div className="flex gap-10 mb-8 pt-2">
-            <div className="relative w-32  ">
+            <div className="relative w-32 ">
               <label htmlFor="Quantity" className="block ">
                 Quantity
               </label>
               <input
                 type="number"
                 name="Quantity"
-                className=" bg-white p-2  w-10 ml-11 text-center rounded-full"
+                className=" bg-white  p-2 pl-10 pr-10 w-full rounded-3xl text-center"  
                 defaultValue={1}
                 min={1}
                 disabled

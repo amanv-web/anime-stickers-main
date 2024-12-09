@@ -1,7 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
- 
-
-
 export const addcart = createSlice({
   initialState: [],
   name: 'cart',
@@ -9,9 +6,8 @@ export const addcart = createSlice({
     add(state, action) {
       const alreadyExist = state.find((item) => item.id === action.payload.id);
       if (alreadyExist) {
-        alreadyExist.quantity + item.quantity;
-       
-      } else {
+        alreadyExist.quantity + item.quantity;   
+      } else { 
         state.push(action.payload);
       }
     },
@@ -21,7 +17,6 @@ export const addcart = createSlice({
   },
 });
 
-// Action creators are generated for each case reducer function
 export const { add, remove } = addcart.actions;
 
 export default addcart.reducer;

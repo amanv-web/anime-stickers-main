@@ -2,10 +2,15 @@ import React from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import { useSelector, useDispatch } from "react-redux";
 import { remove } from "../Redux/slice/addcart";
+import { IoMdRemoveCircle } from "react-icons/io";
+import { IoMdAddCircle } from "react-icons/io";
+import { useState } from "react";
+
 
 function Cart() {
   const products = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+  const [quantity, setQuantity] = useState(1);
 
   return (
     <>
@@ -38,8 +43,55 @@ function Cart() {
                     <span>{product.name}</span>
                   </td>
                   <td className="p-4">
-                    <input type="number" className="w-20 p-2 border  text-center" disabled defaultValue={1}
-                min={1}  value={product.quantity}/>
+                  
+
+
+              <div className="relative w-32 ">
+
+              <input
+                type="number"
+                name="Quantity"
+                className=" bg-white  p-2 w-full  text-center"  
+                
+                min={1}
+                disabled
+                value={quantity}
+              />
+
+
+              <IoMdRemoveCircle
+                className=" absolute bottom-1  text-3xl   text-primary "
+                onClick={() => {
+                  if (quantity > 1) {
+                    setQuantity(quantity - 1);
+                  }
+                }}
+              />
+              <IoMdAddCircle
+                className=" absolute bottom-1 right-0 text-3xl   text-primary "
+                onClick={() => {
+                  setQuantity(quantity + 1);
+                }}
+              />
+  
+          
+
+
+
+
+
+
+
+                
+</div>
+
+
+           
+
+
+
+
+
                   </td>
                   <td className="p-4">${product.price}</td>
                   <td className="p-4">
