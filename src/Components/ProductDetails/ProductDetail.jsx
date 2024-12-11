@@ -53,7 +53,7 @@ function ProductDetail() {
                 className=" bg-white  p-2 pl-10 pr-10 w-full rounded-3xl text-center"  
                 defaultValue={1}
                 min={1}
-                disabled
+                disabled//use enable iske karna hai sab kuch .
                 value={quantity}
               />
 
