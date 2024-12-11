@@ -58,7 +58,6 @@ function Cart() {
                 value={quantity}
               />
 
-
               <IoMdRemoveCircle
                 className=" absolute bottom-1  text-3xl   text-primary "
                 onClick={() => {
@@ -73,25 +72,9 @@ function Cart() {
                   setQuantity(quantity + 1);
                 }}
               />
-  
-          
-
-
-
-
-
-
 
                 
 </div>
-
-
-           
-
-
-
-
-
                   </td>
                   <td className="p-4">${product.price}</td>
                   <td className="p-4">
