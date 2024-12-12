@@ -10,7 +10,7 @@ import { useState } from "react";
 function Cart() {
   const products = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(1);//yeh by default 0 rhega then aapka code calculations wala by default value badhaega//
 
   return (
     <>
