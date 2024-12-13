@@ -1,4 +1,3 @@
-import React from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import { useSelector, useDispatch } from "react-redux";
 import { remove } from "../Redux/slice/addcart";
@@ -10,9 +9,7 @@ import { useState } from "react";
 function Cart() {
   const products = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-  const [quantity, setQuantity] = useState(1);//yeh by default 0 rhega then aapka code calculations wala by default value badhaega ,
-  jo function hai usse auto matic update karne do and uss function ko onclick event listener peh daal doh simple//
-  //
+  const [quantity, setQuantity] = useState(1);
 
   return (
     <>

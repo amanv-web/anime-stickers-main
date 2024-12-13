@@ -14,14 +14,13 @@ function ProductDetail() {
   const { id } = useParams();
   const { products } = useContext(AppContext);
   const product = products.find((item) => item.id === parseInt(id));
-  const [originalPrice, setOriginalPrice] = useState(product.price);
   const [updatedValue, setUpdatedValue] = useState(product.price);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const value = (originalPrice + parseInt(size)) * quantity;
+    const value = (product.price + parseInt(size)) * quantity;
     setUpdatedValue(value);
-  }, [size, quantity]);
+  }, [size, quantity, product.price]);
   return (
     <>
       <div className="flex justify-center flex-wrap gap-10 pt-16 pb-20  bg-primary-quaternary">
@@ -53,8 +52,8 @@ function ProductDetail() {
                 className=" bg-white  p-2 pl-10 pr-10 w-full rounded-3xl text-center"  
                 defaultValue={1}
                 min={1}
-                disabled//use enable iske karna hai sab kuch .
                 value={quantity}
+                disabled
               />
 
               <IoMdRemoveCircle
