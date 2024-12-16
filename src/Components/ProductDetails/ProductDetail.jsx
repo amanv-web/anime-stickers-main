@@ -4,18 +4,36 @@ import { useContext, useEffect } from "react";
 import { AppContext } from "../../ContextApi/ContextApi";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { add } from "../Redux/slice/addcart";
+import { add, updatePrice } from "../Redux/slice/addcart";
 import { IoMdRemoveCircle } from "react-icons/io";
 import { IoMdAddCircle } from "react-icons/io";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function ProductDetail() {
   const [quantity, setQuantity] = useState(1);
   const [size, setSize] = useState(0);
   const { id } = useParams();
   const { products } = useContext(AppContext);
-  const product = products.find((item) => item.id === parseInt(id));
+  const product = products.find((item) => item.id === parseInt(id));  
   const [updatedValue, setUpdatedValue] = useState(product.price);
+  const price = updatedValue  
   const dispatch = useDispatch();
+  const notify = () =>
+    toast("Sticker added to your cart! 🛒", { 
+      progressStyle: { background: 'green' }, bodyClassName: "text-md ",  className: " lg:left-0 left-20 w-[80%]  md:w-full mr-0 sm:mr-auto",
+      position: "top-right", autoClose: 2000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, 
+      
+    });
+  
+  
+  const handleAddToCart = () => {
+    dispatch(add({ ...product, quantity }));  // Dispatch add action with quantity
+  };
+  const handlePrice = () => {
+    dispatch(updatePrice({ ...product, price }));  // Dispatch add action with price
+  };
+
 
   useEffect(() => {
     const value = (product.price + parseInt(size)) * quantity;
@@ -23,7 +41,7 @@ function ProductDetail() {
   }, [size, quantity, product.price]);
   return (
     <>
-      <div className="flex justify-center flex-wrap gap-10 pt-16 pb-20  bg-primary-quaternary">
+      <div className="flex justify-center flex-wrap gap-10 pt-16 pb-20  bg-primary-quaternary dark:bg-gray-400">
         <div>
           <Images/>
         </div>
@@ -37,7 +55,7 @@ function ProductDetail() {
           </Link>
           <h1 className="text-4xl font-bold text-primary mb-3  w-96">
             {product.name}
-          </h1>
+          </h1> 
           <p className="w-96 text-sm pb-2">{product.description} </p>
           <p className="text-5xl text-primary mb-3"> $ {updatedValue} </p>
           <p className="text-red-900 line-through">$ 15</p>
@@ -53,7 +71,7 @@ function ProductDetail() {
                 defaultValue={1}
                 min={1}
                 value={quantity}
-                disabled
+                readOnly
               />
 
               <IoMdRemoveCircle
@@ -91,8 +109,9 @@ function ProductDetail() {
               <NavLink to="#">
                 <button
                   onClick={() => {
-                    dispatch(add(product));
+                    dispatch(add(product)),handleAddToCart() ,handlePrice(),notify();
                   }}
+                  
                   className=" m-auto w-6/12  bg-cyan-700 px-5 py-2.5 text-center -medium text-white hover:bg-cyan-800  dark:hover:bg-cyan-700 text-lg mr- "
                 >
                   Add to cart
